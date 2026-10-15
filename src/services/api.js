@@ -2,7 +2,8 @@ import axios from "axios";
 import store from "../store/store.js";
 
 const api = axios.create({
-    baseURL: "http://localhost:4500/api",
+    // baseURL: "http://localhost:4500/api",
+    baseURL: "https://authentication-product-crud-apis-1-u8l5.onrender.com/api",
     withCredentials: true,
 });
 
