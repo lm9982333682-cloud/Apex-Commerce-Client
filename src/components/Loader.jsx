@@ -1,11 +1,7 @@
 
 import { LoaderCircle } from "lucide-react";
 
-const Loader = ({
-  message = "Loading...",
-  fullScreen = false,
-  size = "md",
-}) => {
+const Loader = ({ message = "Loading...", fullScreen = false, size = "md", }) => {
   const spinnerSize = {
     sm: 18,
     md: 28,
@@ -18,11 +14,10 @@ const Loader = ({
     <div
       role="status"
       aria-live="polite"
-      className={`flex flex-col items-center justify-center gap-3 ${
-        fullScreen
-          ? "min-h-screen bg-[var(--bg-main)]"
-          : "w-full py-12"
-      }`}
+      className={`flex flex-col items-center justify-center gap-3 ${fullScreen
+        ? "min-h-screen bg-[var(--bg-main)]"
+        : "w-full py-12"
+        }`}
     >
       <LoaderCircle
         size={iconSize}

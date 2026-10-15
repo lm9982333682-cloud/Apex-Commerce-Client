@@ -1,41 +1,21 @@
 
 import { Link } from "react-router";
-import {
-  Eye,
-  Pencil,
-  Package,
-  ImageOff,
-} from "lucide-react";
+import { Eye, Pencil, Package, ImageOff, } from "lucide-react";
 import StatusBadge from "./StatusBadge";
 
-const ProductCard = ({
-  product,
-  onEdit,
-}) => {
-  const {
-    _id,
-    id,
-    title,
-    name,
-    image,
-    images,
-    price,
-    category,
-    stock,
-    status = "Active",
-  } = product;
+const ProductCard = ({ product, onEdit, }) => {
+
+
+  const { _id, id, title, name, image, images, price, category, stock, status = "Active", } = product;
 
   const productId = _id ?? id;
   const productName = title ?? name ?? "Untitled Product";
 
-  const productImage =
-    image ?? (Array.isArray(images) ? images[0] : "");
+  const productImage = image ?? (Array.isArray(images) ? images[0] : "");
 
-  const productPrice =
-    typeof price === "object" ? price?.amount : price;
+  const productPrice = typeof price === "object" ? price?.amount : price;
 
-  const productCurrency =
-    typeof price === "object" ? price?.currency : "INR";
+  const productCurrency = typeof price === "object" ? price?.currency : "INR";
 
   const formattedPrice = new Intl.NumberFormat("en-IN", {
     style: "currency",

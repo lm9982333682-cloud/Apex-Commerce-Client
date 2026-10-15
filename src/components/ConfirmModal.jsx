@@ -12,6 +12,8 @@ const ConfirmModal = ({
   variant = "danger",
   loading = false,
 }) => {
+
+
   if (!isOpen) return null;
 
   const isDanger = variant === "danger";
@@ -32,11 +34,10 @@ const ConfirmModal = ({
         {/* Close Button */}
         <div className="flex items-start justify-between gap-4">
           <div
-            className={`flex h-12 w-12 items-center justify-center rounded-xl ${
-              isDanger
-                ? "bg-[var(--danger-bg)] text-[var(--danger)]"
-                : "bg-[var(--primary-light)] text-[var(--primary)]"
-            }`}
+            className={`flex h-12 w-12 items-center justify-center rounded-xl ${isDanger
+              ? "bg-[var(--danger-bg)] text-[var(--danger)]"
+              : "bg-[var(--primary-light)] text-[var(--primary)]"
+              }`}
           >
             <AlertTriangle size={24} />
           </div>
@@ -82,11 +83,10 @@ const ConfirmModal = ({
             type="button"
             onClick={onConfirm}
             disabled={loading}
-            className={`rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 ${
-              isDanger
-                ? "bg-[var(--danger)]"
-                : "bg-[var(--primary)]"
-            }`}
+            className={`rounded-xl px-4 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 ${isDanger
+              ? "bg-[var(--danger)]"
+              : "bg-[var(--primary)]"
+              }`}
           >
             {loading ? "Please wait..." : confirmText}
           </button>
